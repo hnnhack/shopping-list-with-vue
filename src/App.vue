@@ -90,6 +90,9 @@ const togglePurchased = (item) =>{
   <p v-if='!items.length'>
     List is empty
   </p>
+  <p class="footer">
+    <a href="https://github.com/hnnhack/vue-project">Source code</a>
+  </p>
 </template>
 
 <style src="./main.css" lang="css"></style>
