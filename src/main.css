@@ -112,6 +112,8 @@ li input {
   font-size: 0.9rem;
   letter-spacing: 0.5px;
   transition: all 0.1s ease-in;
+  background: #f32404;
+  color: #fff;
 }
 
 .btn[disabled] {
