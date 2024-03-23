@@ -9,21 +9,31 @@ const items = ref([
 ])
 const newItem = ref()
 const newItemHighPriority = ref(false)
+const iceCreamFlavors = ref([])
 </script>
 
 <template>
   <h1>{{ header }}</h1>
   <input v-model="newItem" type="text" placeholder="Add an item">
-  {{ newItemHighPriority ? 'High' : 'Low' }}
+  {{ iceCreamFlavors }}
   <br />
   <label>
     <input type="checkbox" v-model="newItemHighPriority"> 
     High Priority
   </label>
-  <select v-model="newItemHighPriority">
-    <option value="false">Low</option>
-    <option value="true">High</option>
-  </select>
+  <br />
+  <label>
+    <input type="checkbox" v-model="iceCreamFlavors" value="Vanilla"> 
+    Vanilla
+  </label>
+  <label>
+    <input type="checkbox" v-model="iceCreamFlavors" value="Strawberry"> 
+    Strawberry
+  </label>
+  <label>
+    <input type="checkbox" v-model="iceCreamFlavors" value="Chocolate"> 
+    Chocolate
+  </label>
   <ul>
     <li v-for="({id, label}, index) in items" :key="id">
       {{ index + 1 + '-' }}
