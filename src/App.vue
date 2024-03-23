@@ -14,8 +14,8 @@ const saveItem = () => {
   items.value.push({id: items.value.length + 1, label: newItem.value})
   newItem.value = ''
 }
-const doEdit = (e) => {
-  editing.value = e
+const doEdit = () => {
+  editing.value = !editing.value
   newItem.value = ''
 }
 </script>
@@ -23,8 +23,8 @@ const doEdit = (e) => {
 <template>
   <div class="header">
     <h1>{{ header }}</h1>
-    <button v-if="editing" class="btn" @click="doEdit(false)">Cancel</button>
-    <button v-else class="btn btn-primary" @click="doEdit(true)">Add Item</button>
+    <button v-if="editing" class="btn" @click="doEdit">Cancel</button>
+    <button v-else class="btn btn-primary" @click="doEdit">Add Item</button>
   </div>
   <form 
     @submit.prevent="saveItem"
@@ -40,6 +40,7 @@ const doEdit = (e) => {
       High Priority
     </label>
     <button
+      v-bind:disabled="!newItem.length"
       class="btn btn-primary"
     >Save Item</button>
   </form>
