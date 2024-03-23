@@ -51,8 +51,8 @@ const togglePurchased = (item) =>{
 <template>
   <div class="header">
     <h1>{{ header }}</h1>
-    <button v-if="editing" class="btn" @click="doEdit">Cancel</button>
-    <button v-else class="btn btn-primary" @click="doEdit">Add Item</button>
+    <button v-if="editing" class="btn" @click="doEdit(false)">Cancel</button>
+    <button v-else class="btn btn-primary" @click="doEdit(true)">Add Item</button>
   </div>
   <form 
     @submit.prevent="saveItem"
